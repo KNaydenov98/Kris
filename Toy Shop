@@ -1,0 +1,47 @@
+using System;
+
+namespace Softuni
+{
+    class Program
+    {
+        private static double discount;
+
+        static void Main(string[] args)
+        {
+            double priceexcursion = double.Parse(Console.ReadLine());
+            int numPuzzle = int.Parse(Console.ReadLine());
+            int talkingDoll = int.Parse(Console.ReadLine());
+            int teddyBears = int.Parse(Console.ReadLine());
+            int numMinions = int.Parse(Console.ReadLine());
+            int numTrucks = int.Parse(Console.ReadLine());
+
+            double sum = numPuzzle * 2.60 + talkingDoll * 3 + teddyBears * 4.10 + numMinions * 8.20 + numTrucks * 2;
+            double toysCount = numPuzzle + talkingDoll + teddyBears + numMinions + numTrucks;
+            if (toysCount >= 50)
+            {
+
+                 discount = sum * 0.25; 
+            
+
+            }
+             
+            
+            double finalPrice = sum - discount;
+            double rent = finalPrice * 0.1;
+            double profit = finalPrice - rent;
+            double money = profit - priceexcursion;
+            if (profit>=priceexcursion)
+            {
+                Console.WriteLine($"Yes! {money:F2} lv left.");
+            }
+            else
+            {
+                Console.WriteLine($"Not enough money! {priceexcursion-profit:f2} lv needed.");
+            }
+        }
+            
+    }
+
+
+
+}
